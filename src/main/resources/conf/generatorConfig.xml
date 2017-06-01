@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" > 
+<generatorConfiguration>
+  <classPathEntry
+        location="C:\Users\Audience\.m2\repository\com\oracle\ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar" />
+  <context id="DBTables" targetRuntime="MyBatis3">
+    
+    <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">  
+            <property name="searchString" value="Example$" />  
+            <property name="replaceString" value="Criteria" />  
+     </plugin>  
+     <plugin type="org.mybatis.generator.plugins.CachePlugin">  
+            <property name="cache_eviction" value="LRU" />  
+            <property name="cache_flushInterval" value="60000" />  
+            <property name="cache_readOnly" value="true" />  
+            <property name="cache_size" value="1560" />  
+     </plugin>  
+     <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>  
+     <plugin type="org.mybatis.generator.plugins.SerializablePlugin">  
+            <property name="suppressJavaInterface" value="false" />  
+     </plugin>  
+     <commentGenerator  type="org.mybatis.generator.internal.CustomeCommentGenerator"><!-- 数据库表注释生成-->  
+            <property name="javaFileEncoding" value="UTF-8" />  
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+            <property name="suppressAllComments" value="false" />  
+            <property name="suppressDate" value="false" />  
+     </commentGenerator>
+    
+    <jdbcConnection connectionURL="jdbc:oracle:thin:@121.43.178.103:15212:orcl" driverClass="oracle.jdbc.OracleDriver" password="en979VKtaV" userId="iecpay" />
+    <javaModelGenerator targetPackage="org.pay.entity" targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+    <sqlMapGenerator targetPackage="org.pay.mapper" targetProject="src/main/java">
+    </sqlMapGenerator> 
+    <javaClientGenerator targetPackage="org.pay.dao" targetProject="src/main/java" type="XMLMAPPER" >
+    </javaClientGenerator>
+    <table schema="IECPAY" tableName="IP_MALL_ORDER"  domainObjectName="Ip_mall_order" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+    <table schema="IECPAY" tableName="IP_PAY_BILL"  domainObjectName="Ip_pay_bill"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+    <table schema="IECPAY" tableName="CHECK_ACC_FILE_DETAIL"  domainObjectName="Check_acc_file_detail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+    <table schema="IECPAY" tableName="CHECK_ACC_INFO"  domainObjectName="Check_acc_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+    <table schema="IECPAY" tableName="IP_REFUND_ORDER"  domainObjectName="Ip_refund_order" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+      <property name="useActualColumnNames" value="true"/>
+    <!-- 
+      <columnOverride column="???" property="???" /> -->
+    </table>
+  </context>
+</generatorConfiguration>

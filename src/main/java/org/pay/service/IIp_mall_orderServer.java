@@ -1,6 +1,7 @@
 package org.pay.service;
 
 import org.pay.entity.Ip_mall_order;
+import org.springframework.stereotype.Service;
 
 public interface IIp_mall_orderServer {
 	

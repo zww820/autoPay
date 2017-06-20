@@ -184,6 +184,23 @@
             <version>2.3.1</version>
        </dependency>
        
+
+       
+ 
+   <!-- SQLServer JDBC driver (JTDS) -->
+   <!-- http://mvnrepository.com/artifact/net.sourceforge.jtds/jtds -->
+   <dependency>
+       <groupId>net.sourceforge.jtds</groupId>
+       <artifactId>jtds</artifactId>
+       <version>1.3.1</version>
+   </dependency>
+   
+   <dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.10</version>
+</dependency>     
+
        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
     <groupId>javax.servlet</groupId>
@@ -209,24 +226,8 @@
 <dependency>
     <groupId>org.apache.httpcomponents</groupId>
     <artifactId>httpclient</artifactId>
-    <version>4.5.3</version>
-</dependency>
-
-       
- 
-   <!-- SQLServer JDBC driver (JTDS) -->
-   <!-- http://mvnrepository.com/artifact/net.sourceforge.jtds/jtds -->
-   <dependency>
-       <groupId>net.sourceforge.jtds</groupId>
-       <artifactId>jtds</artifactId>
-       <version>1.3.1</version>
-   </dependency>
-   
-   <dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.10</version>
-</dependency>          
+    <version>4.5.2</version>
+</dependency>     
   </dependencies>
  
  <build>
@@ -311,6 +312,4 @@
 			</releases>
 		</repository>
 	</repositories>
-
-
 </project>

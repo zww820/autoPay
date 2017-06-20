@@ -16,12 +16,11 @@ import org.pay.utils.Constants;
 import org.pay.utils.Randparams;
 
 @SuppressWarnings("restriction")
-@Service("IIp_mall_orderServerImpl")  
+@Service("IIp_mall_orderServerImpl")
 public class IIp_mall_orderServerImpl implements IIp_mall_orderServer{
 	@Resource
 	private Ip_mall_orderDAO ip_mall_orderdao;
 
-	
 	public Ip_mall_order getdata(String orderId) {
 		// TODO Auto-generated method stub
 		return this.ip_mall_orderdao.selectByPrimaryKey(orderId);

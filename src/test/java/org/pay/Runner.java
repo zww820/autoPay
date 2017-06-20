@@ -22,7 +22,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 
 
 @SuppressWarnings("restriction")
-@ContextConfiguration(locations={"classpath:spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath*:/spring-mybatis.xml"})
 public class Runner extends AbstractTestNGSpringContextTests {
 
 	private static Logger logger = Logger.getLogger(Runner.class);
@@ -43,7 +43,7 @@ public class Runner extends AbstractTestNGSpringContextTests {
 	@Test
 	public void runer(){
 //		1.综合积分
-//		this.createintegral(1);
+		this.createintegral(1);
 //		2.贵宾积分
 //		this.createintegral(2);
 //		3.村镇积分（兴安）
@@ -59,7 +59,7 @@ public class Runner extends AbstractTestNGSpringContextTests {
 ////		8.村镇积分（桂平）
 //		this.createintegral(8);
 ////		9.村镇积分（平南）
-		this.createintegral(9);
+//		this.createintegral(9);
 	}
 	//创建数据
 	private void createintegral(int jfType){		
@@ -70,6 +70,7 @@ public class Runner extends AbstractTestNGSpringContextTests {
 		Ip_mall_order ip_mall_order=ip_mall_orderserver.getTopdata(1);
 		Ip_pay_bill ip_pay_bill=ip_pay_billserver.getdata(ip_mall_order.getPayLogNo().toString());
 //		check_acc_file_detail=check_acc_file_detailserver.getdata(ip_pay_bill.getLogNo().toString());
+		//订单表更新最新一条数据
 		ip_mall_orderserver.updatedata(ip_mall_order,1,Constants.GENERAL_INTEGRAL,Constants.GENERAL_INTEGRAL_AMT, 
 				Constants.GENERAL_INTEGRAL, Constants.GENERAL_INTEGRAL_AMT, Constants.RED_PACKET_AMT, Constants.RED_PACKET_AMT,jfType);
 		String LogNO=ip_mall_order.getPayLogNo().toString();
@@ -84,6 +85,7 @@ public class Runner extends AbstractTestNGSpringContextTests {
 		long TownIntegralBa=ip_mall_order.getTownIntegralBa().longValue();
 		long TownIntegralGp=ip_mall_order.getTownIntegralGp().longValue();
 		long TownIntegralPn=ip_mall_order.getTownIntegralPn().longValue();
+		//流水表更新一条数据记录
 		ip_pay_billserver.updatedata(ip_pay_bill, 1, Constants.GENERAL_INTEGRAL, Constants.GENERAL_INTEGRAL_AMT, 
 				Constants.RED_PACKET_AMT,Constants.CHAN_TXN_CD,Constants.LogNO, jfType);
 //		//对账详情表插入前日数据
